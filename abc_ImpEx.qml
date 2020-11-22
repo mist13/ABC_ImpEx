@@ -29,7 +29,7 @@ import Qt.labs.folderlistmodel 2.2
 
 MuseScore {
     menuPath: "Plugins.ABC ImpEx"
-    version: "1.0"
+    version: "1.1"
     description: qsTr("This plugin imports ABC notation from a file or the clipboard and exports the current score to ABC.\nExecutables of abc2xml and/or xml2abc are required.")
     requiresScore: false
     pluginType: "dialog"       
@@ -210,7 +210,7 @@ MuseScore {
     
     Text { // Display plugin version
         id: versionText
-        text: "V 1.0"
+        text: "V 1.1"
         font.pointSize:10
         anchors.right: window.right
         anchors.top: window.top
@@ -371,7 +371,7 @@ MuseScore {
         onClicked: {
             if (abcText.text !== "" && abcText.text !== qsTr(installAbcText).arg(pathImpEx2) && abcText.text !== qsTr(infoAbcText)) {
                 saveDialog.open();
-                Qt.quit();
+                //Qt.quit();
                 }
             else {        
                 infoText.text = qsTr("No abc to save.")
@@ -400,7 +400,7 @@ MuseScore {
         var iniLines = iniFile.read().split("\n");
         var iniEntries = [];
         var path = "";
-        for(var l=0; l<iniLines.length; l++) {
+        for (var l=0; l<iniLines.length; l++) {
             if (iniLines[l] !== "" && iniLines[l] !== undefined) {
                 if (iniLines[l].indexOf("abc2xml") == 0 || iniLines[l].indexOf("xml2abc") == 0) {
                     iniEntries = iniLines[l].split("=");
@@ -409,12 +409,12 @@ MuseScore {
                         path = prepConvPath(path);
                         if (iniEntries[0].indexOf("abc2xml") > -1)
                             if (pathAbc2Xml == "") pathAbc2Xml = path;
-                        else 
+                        if (iniEntries[0].indexOf("xml2abc") > -1)
                             if (pathXml2Abc == "") pathXml2Abc = path;
                         }
                     }
                 }
-            }
+            }    
         }
         
     function whatPython() { // Identify Python call 
