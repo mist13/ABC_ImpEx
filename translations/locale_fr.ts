@@ -169,7 +169,7 @@ ou entrez son chemin d'accès dans le fichier abc_ImpEx.ini.</translation>
 
             1. Pour traduire la partition courante, cliquer sur le bouton &apos;Exporter&apos;.
 
-            2. Midifer le texte ABS ou sélectionner un partie si besoin.
+            2. Modifer le texte ABC ou sélectionner un partie si besoin.
 
             3. Utiliser le bouton &apos;Exporter&apos; pour enregistrer un fichier.</translation>
     </message>
