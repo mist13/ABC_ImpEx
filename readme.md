@@ -10,14 +10,18 @@ On Windows both the Python and exe versions can be used.
 If you use it with Python, Python has to be in the PATH environment variable.
 
 ## Translations
-This plugin speaks English, German and Irish.  
-Thanks to Batt O'Connor for his help with the Irish.  
+This plugin speaks English, French, German and Irish.  
+Thanks to Batt O'Connor for his help with the Irish.
+Thanks to Benoît Rouits for the French translation.
 If you can provide translations into other languages, please be in touch.
 
 ## Further Information
 For more detailed info visit [blechtrottel.net](http://blechtrottel.net/en/abc_impex.html)
 
 ## Version History
+1.2
+French translation added.
+
 1.1  
 Fixes to reading the ini file (Willem) and saving the export abc. 
 
