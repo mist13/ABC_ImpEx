@@ -5,7 +5,9 @@
 //  (Based on ABC Import by Nicolas Froment (lasconic))
 //  Some of the code was heavily inspired by 
 //  Run (C)2012 Werner Schweer and others, and Batch Convert
-//  (C)2020 Michael Strasser
+//  Musescore 4 adaptations and dark theme support based on code
+//  from Element analyser by Parking B (lgvr123)
+//  (C)2020-23 Michael Strasser
 //
 //  This program is free software; you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License version 2.
@@ -29,19 +31,28 @@ import Qt.labs.folderlistmodel 2.2
 
 MuseScore {
     menuPath: "Plugins.ABC ImpEx"
-    version: "1.2"
+    version: "1.3"
     description: qsTr("This plugin imports ABC notation from a file or the clipboard and exports the current score to ABC.\nExecutables of abc2xml and/or xml2abc are required.")
     requiresScore: false
-    pluginType: "dialog"       
+    pluginType: "dialog"   
+    
+    id:window
+    width: 800
+    height: 520
+    
+    Component.onCompleted : {
+        if (mscoreMajorVersion >= 4) {
+            window.title = "ABC ImpEx";
+            window.categoryCode = "Import/Export";
+            window.thumbnailName = "abc_ImpEx.png"; 
+            }
+        }
     
     QProcess {
         id: proc
         }
-                            
-    id:window
-    width: 800; height: 520;
     
-    property string pathImpEx : Qt.resolvedUrl(".")
+    property string pathImpEx: Qt.resolvedUrl(".")
     property string pathImpEx2: getLocalPath(pathImpEx)
     property string pathAbc2Xml
     property string pathXml2Abc
@@ -63,7 +74,12 @@ MuseScore {
             1. To translate active score, click button 'Export'.\n
             2. Change ABC as desired and/or select part of it.\n
             3. Save into file using button 'Save'.")
-    
+   
+    SystemPalette {
+        id: sysActivePalette
+        colorGroup: SystemPalette.Active
+        }
+        
     FolderListModel { // List of converters in ImpEx folder 
         id: folderModel 
         folder: pathImpEx
@@ -102,7 +118,7 @@ MuseScore {
                 }
             else if (pathAbc2Xml.startsWith("python0") || pathXml2Abc.startsWith("python0")) { // Instructions if no python
                 abcText.text = qsTr(installAbcText).arg(pathImpEx2);
-                infoText.text = qsTr("Python not found!.\nPlease check your installation and\nenvironment variables.");
+                infoText.text = qsTr("Python not found!\nPlease check your installation and\nenvironment variables.");
                 userInfo.visible = true;
                 }
             else              
@@ -184,6 +200,7 @@ MuseScore {
         standardButtons: StandardButton.Ok
         Text {
             id: infoText
+            color: sysActivePalette.text
             anchors.verticalCenter: parent.verticalCenter
             anchors.left: parent.left
             anchors.leftMargin: 15
@@ -194,8 +211,9 @@ MuseScore {
     Label { // Basic info and link to abc2xml and xml2abc
         id: textLabel
         wrapMode: Text.WordWrap
-        text: qsTr("This plugin needs abc2xml and/or xml2abc from <a href='https://wim.vree.org/svgParse'>wim.vree.org</a> to work.")
-        font.pointSize:11
+        text: qsTr("This plugin needs abc2xml and/or xml2abc from <a href='https://wim.vree.org/svgParse'><font color='#3b81c7'>wim.vree.org</font></a> to work.")
+        font.pointSize: 11
+        color: sysActivePalette.text
         anchors.left: window.left
         anchors.top: window.top
         anchors.leftMargin: 18
@@ -210,8 +228,9 @@ MuseScore {
     
     Text { // Display plugin version
         id: versionText
-        text: "V 1.1"
-        font.pointSize:10
+        text: "V 1.3"
+        font.pointSize: 10
+        color: sysActivePalette.text
         anchors.right: window.right
         anchors.top: window.top
         anchors.rightMargin: 17
@@ -220,7 +239,7 @@ MuseScore {
         
     // Where people can paste their ABC tune or where an ABC file is put when opened
     TextArea {
-        id:abcText
+        id: abcText
         anchors.top: textLabel.bottom
         anchors.left: window.left
         anchors.right: window.right
@@ -229,8 +248,8 @@ MuseScore {
         anchors.bottomMargin: 10
         anchors.leftMargin: 10
         anchors.rightMargin: 10
-        width:parent.width
-        height:400
+        width: parent.width
+        height: 400
         wrapMode: TextEdit.WrapAnywhere
         textFormat: TextEdit.PlainText
         }
@@ -247,7 +266,7 @@ MuseScore {
         }
     
     Button { // Open Abc and display
-        id : buttonOpenFile
+        id: buttonOpenFile
         text: qsTranslate("QPlatformTheme", "Open") //qsTr("Open...")
         anchors.bottom: window.bottom
         anchors.left: abcText.left
@@ -260,7 +279,7 @@ MuseScore {
         }
         
     Button { // Import Abc into Xml
-        id : buttonImport
+        id: buttonImport
         text: qsTranslate("QPlatformTheme", "Import") //qsTr("Import")
         anchors.bottom: window.bottom
         anchors.left: buttonOpenFile.right
@@ -280,7 +299,7 @@ MuseScore {
                     if (lbCheckBox.checked)
                         scoreLineBreak = " ";
                     else
-                        scoreLineBreak = " -b ";                   
+                        scoreLineBreak = " -b ";
                     console.log(pathAbc2Xml + scoreLineBreak + myImpExAbcPath);
                     proc.start(pathAbc2Xml + scoreLineBreak + "--meta W:rights " + myImpExAbcPath);
                     var val = proc.waitForFinished(5000);
@@ -293,21 +312,21 @@ MuseScore {
                     }
                 else {
                     infoText.text = qsTr("No abc to import.")
-                    userInfo.visible = true;                   
+                    userInfo.visible = true;
                     }
                 }
             else {
                 if (pathAbc2Xml == "")
                     infoText.text = qsTr("This function needs abc2xml.\nCopy file into abc_ImpEx folder\nor enter path into abc_ImpEx.ini.");     
                 else
-                    infoText.text = qsTr("Python not found!.\nPlease check your installation and\nenvironment variables.");
+                    infoText.text = qsTr("Python not found!\nPlease check your installation and\nenvironment variables.");
                 userInfo.visible = true;
                 }
             }
         }
         
     Button {
-        id : buttonCancel
+        id: buttonCancel
         text: qsTranslate("QPlatformTheme", "Cancel") //qsTr("Cancel")
         anchors.bottom: window.bottom
         anchors.horizontalCenter: window.horizontalCenter
@@ -320,7 +339,7 @@ MuseScore {
         }
 
     Button { // Export Xml into temp Abc and display result
-        id : buttonExport
+        id: buttonExport
         text: qsTranslate("QPlatformTheme", "Export") //qsTr("Export")
         anchors.bottom: window.bottom
         anchors.right: buttonSaveFile.left
@@ -349,7 +368,7 @@ MuseScore {
                     if (pathXml2Abc == "")
                         infoText.text = qsTr("This function needs xml2abc.\nCopy file into abc_ImpEx folder\nor enter path into abc_ImpEx.ini.");
                     else
-                        infoText.text = qsTr("Python not found!.\nPlease check your installation and\nenvironment variables.");
+                        infoText.text = qsTr("Python not found!\nPlease check your installation and\nenvironment variables.");
                     userInfo.visible = true;
                     }
                 }
@@ -361,7 +380,7 @@ MuseScore {
         }
         
     Button { // Save Abc File
-        id : buttonSaveFile
+        id: buttonSaveFile
         text: qsTranslate("QPlatformTheme", "Save") //qsTr("Save...")
         anchors.bottom: window.bottom
         anchors.right: abcText.right
@@ -384,7 +403,7 @@ MuseScore {
         path = path.replace(/^(file:\/{2})/,"");
         if (Qt.platform.os == "windows") path = path.replace(/^\//,"");            
         return path;
-    }        
+    }
     
     function prepConvPath(path) { // Clean and prepare paths for running converters 
         path = getLocalPath(path);
