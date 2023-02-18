@@ -74,7 +74,7 @@ Executables of abc2xml and/or xml2abc are required.</source>
         <location filename="../abc_ImpEx.qml" line="105"/>
         <location filename="../abc_ImpEx.qml" line="303"/>
         <location filename="../abc_ImpEx.qml" line="352"/>
-        <source>Python not found!.
+        <source>Python not found!
 Please check your installation and
 environment variables.</source>
         <translation>Python non trouvé !
@@ -92,9 +92,9 @@ les variables d'environnement.</translation>
         <translation>Veuillez choisir une destination</translation>
     </message>
     <message>
-        <location filename="../abc_ImpEx.qml" line="197"/>
-        <source>This plugin needs abc2xml and/or xml2abc from &lt;a href=&apos;https://wim.vree.org/svgParse&apos;&gt;wim.vree.org&lt;/a&gt; to work.</source>
-        <translation>Ce greffon a besoin de abc2xml et/ou xml2abc disponibles à &lt;a href=&apos;https://wim.vree.org/svgParse&apos;&gt;wim.vree.org&lt;/a&gt; pour fonctionner.</translation>
+        <location filename="../abc_ImpEx.qml" line="213"/>
+        <source>This plugin needs abc2xml and/or xml2abc from &lt;a href=&apos;https://wim.vree.org/svgParse&apos;&gt;&lt;font color=&apos;#3b81c7&apos;&gt;wim.vree.org&lt;/font&gt;&lt;/a&gt; to work.</source>
+        <translation>Ce greffon a besoin de abc2xml et/ou xml2abc disponibles à &lt;a href=&apos;https://wim.vree.org/svgParse&apos;&gt;&lt;font color=&apos;#3b81c7&apos;&gt;wim.vree.org&lt;/font&gt;&lt;/a&gt; pour fonctionner.</translation>
     </message>
     <message>
         <location filename="../abc_ImpEx.qml" line="240"/>

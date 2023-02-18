@@ -74,7 +74,7 @@ Executables of abc2xml and/or xml2abc are required.</source>
         <location filename="../abc_ImpEx.qml" line="105"/>
         <location filename="../abc_ImpEx.qml" line="303"/>
         <location filename="../abc_ImpEx.qml" line="352"/>
-        <source>Python not found!.
+        <source>Python not found!
 Please check your installation and
 environment variables.</source>
         <translation>Níl Python a fháil!
@@ -92,9 +92,9 @@ agus na hathróga timpeallachta.</translation>
         <translation>Roghnaigh ceann scríbe le do thoil</translation>
     </message>
     <message>
-        <location filename="../abc_ImpEx.qml" line="197"/>
-        <source>This plugin needs abc2xml and/or xml2abc from &lt;a href=&apos;https://wim.vree.org/svgParse&apos;&gt;wim.vree.org&lt;/a&gt; to work.</source>
-        <translation>Is gá abc2xml agus/nó xml2abc de &lt;a href=&apos;https://wim.vree.org/svgParse&apos;&gt;wim.vree.org&lt;/a&gt;  leis an breisán seo.</translation>
+        <location filename="../abc_ImpEx.qml" line="213"/>
+        <source>This plugin needs abc2xml and/or xml2abc from &lt;a href=&apos;https://wim.vree.org/svgParse&apos;&gt;&lt;font color=&apos;#3b81c7&apos;&gt;wim.vree.org&lt;/font&gt;&lt;/a&gt; to work.</source>
+        <translation>Is gá abc2xml agus/nó xml2abc de &lt;a href=&apos;https://wim.vree.org/svgParse&apos;&gt;&lt;font color=&apos;#3b81c7&apos;&gt;wim.vree.org&lt;/font&gt;&lt;/a&gt; leis an breisán seo.</translation>
     </message>
     <message>
         <location filename="../abc_ImpEx.qml" line="240"/>

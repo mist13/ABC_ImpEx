@@ -4,27 +4,27 @@
 <context>
     <name>QPlatformTheme</name>
     <message>
-        <location filename="../abc_ImpEx.qml" line="251"/>
+        <location filename="../abc_ImpEx.qml" line="269"/>
         <source>Open</source>
         <translation>Öffnen</translation>
     </message>
     <message>
-        <location filename="../abc_ImpEx.qml" line="264"/>
+        <location filename="../abc_ImpEx.qml" line="282"/>
         <source>Import</source>
         <translation>Importieren</translation>
     </message>
     <message>
-        <location filename="../abc_ImpEx.qml" line="311"/>
+        <location filename="../abc_ImpEx.qml" line="329"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../abc_ImpEx.qml" line="324"/>
+        <location filename="../abc_ImpEx.qml" line="342"/>
         <source>Export</source>
         <translation>Exportieren</translation>
     </message>
     <message>
-        <location filename="../abc_ImpEx.qml" line="366"/>
+        <location filename="../abc_ImpEx.qml" line="383"/>
         <source>Save</source>
         <translation>Speichern</translation>
     </message>
@@ -32,14 +32,14 @@
 <context>
     <name>abc_ImpEx</name>
     <message>
-        <location filename="../abc_ImpEx.qml" line="33"/>
+        <location filename="../abc_ImpEx.qml" line="34"/>
         <source>This plugin imports ABC notation from a file or the clipboard and exports the current score to ABC.
 Executables of abc2xml and/or xml2abc are required.</source>
-        <translation>Dieses Plugin importiert ABC-Notation aus einer Datei oder der Zwischenablage und exportiert die aktiven Partitur als ABC.
+        <translation>Dieses Plugin importiert ABC-Notation aus einer Datei oder der Zwischenablage und exportiert die aktive Partitur als ABC.
 Die Programme abc2xml bzw. xml2abc werden benötigt.</translation>
     </message>
     <message>
-        <location filename="../abc_ImpEx.qml" line="49"/>
+        <location filename="../abc_ImpEx.qml" line="59"/>
         <source>
  INSTALLATION
  ==========
@@ -71,43 +71,43 @@ Die Programme abc2xml bzw. xml2abc werden benötigt.</translation>
         Alternativ kann man auch abc2xml.exe und xm2abc.exe verwenden.</translation>
     </message>
     <message>
-        <location filename="../abc_ImpEx.qml" line="105"/>
-        <location filename="../abc_ImpEx.qml" line="303"/>
-        <location filename="../abc_ImpEx.qml" line="352"/>
-        <source>Python not found!.
+        <location filename="../abc_ImpEx.qml" line="120"/>
+        <location filename="../abc_ImpEx.qml" line="321"/>
+        <location filename="../abc_ImpEx.qml" line="370"/>
+        <source>Python not found!
 Please check your installation and
 environment variables.</source>
-        <translation>Python wurde nicht gefunden.
+        <translation>Python wurde nicht gefunden!
 Überprüfen Sie Ihre Installation und
 die Umgebungsvariablen.</translation>
     </message>
     <message>
-        <location filename="../abc_ImpEx.qml" line="148"/>
+        <location filename="../abc_ImpEx.qml" line="163"/>
         <source>Please choose a file</source>
         <translation>Bitte Datei auswählen</translation>
     </message>
     <message>
-        <location filename="../abc_ImpEx.qml" line="162"/>
+        <location filename="../abc_ImpEx.qml" line="177"/>
         <source>Please select a destination</source>
         <translation>Bitte Zieldatei wählen</translation>
     </message>
     <message>
-        <location filename="../abc_ImpEx.qml" line="197"/>
-        <source>This plugin needs abc2xml and/or xml2abc from &lt;a href=&apos;https://wim.vree.org/svgParse&apos;&gt;wim.vree.org&lt;/a&gt; to work.</source>
-        <translation>Dieses Plugin benötigt abc2xml bzw. xml2abc von &lt;a href=&apos;https://wim.vree.org/svgParse&apos;&gt;wim.vree.org&lt;/a&gt;.</translation>
+        <location filename="../abc_ImpEx.qml" line="213"/>
+        <source>This plugin needs abc2xml and/or xml2abc from &lt;a href=&apos;https://wim.vree.org/svgParse&apos;&gt;&lt;font color=&apos;#3b81c7&apos;&gt;wim.vree.org&lt;/font&gt;&lt;/a&gt; to work.</source>
+        <translation>Dieses Plugin benötigt abc2xml bzw. xml2abc von &lt;a href=&apos;https://wim.vree.org/svgParse&apos;&gt;&lt;font color=&apos;#3b81c7&apos;&gt;wim.vree.org&lt;/font&gt;&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../abc_ImpEx.qml" line="240"/>
+        <location filename="../abc_ImpEx.qml" line="258"/>
         <source>score line-break = $</source>
         <translation>neue Notenzeile = $</translation>
     </message>
     <message>
-        <location filename="../abc_ImpEx.qml" line="295"/>
+        <location filename="../abc_ImpEx.qml" line="313"/>
         <source>No abc to import.</source>
         <translation>Kein abc zum Importieren vorhanden.</translation>
     </message>
     <message>
-        <location filename="../abc_ImpEx.qml" line="301"/>
+        <location filename="../abc_ImpEx.qml" line="319"/>
         <source>This function needs abc2xml.
 Copy file into abc_ImpEx folder
 or enter path into abc_ImpEx.ini.</source>
@@ -116,7 +116,7 @@ Datei in den abc_ImpEx-Ordner kopieren
 oder den Pfad in die abc_ImpEx.ini eintragen.</translation>
     </message>
     <message>
-        <location filename="../abc_ImpEx.qml" line="350"/>
+        <location filename="../abc_ImpEx.qml" line="368"/>
         <source>This function needs xml2abc.
 Copy file into abc_ImpEx folder
 or enter path into abc_ImpEx.ini.</source>
@@ -125,17 +125,17 @@ Datei in den abc_ImpEx-Ordner kopieren
 oder den Pfad in die abc_ImpEx.ini eintragen.</translation>
     </message>
     <message>
-        <location filename="../abc_ImpEx.qml" line="357"/>
+        <location filename="../abc_ImpEx.qml" line="375"/>
         <source>No score to export.</source>
         <translation>Keine Noten zum Exportieren vorhanden.</translation>
     </message>
     <message>
-        <location filename="../abc_ImpEx.qml" line="378"/>
+        <location filename="../abc_ImpEx.qml" line="395"/>
         <source>No abc to save.</source>
         <translation>Kein abc zum Speichern vorhanden.</translation>
     </message>
     <message>
-        <location filename="../abc_ImpEx.qml" line="58"/>
+        <location filename="../abc_ImpEx.qml" line="68"/>
         <source>
  IMPORT
  ======
