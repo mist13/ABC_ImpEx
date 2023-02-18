@@ -20,9 +20,9 @@ Thanks to Benoît Rouits for the French translation.If you can provide translati
 For more detailed info visit [blechtrottel.net](http://blechtrottel.net/en/abc_impex.html)
 
 ## Version History
-1.3
-Adaptations for MuseScore 4.
-Minor design changes.
+1.3  
+Adaptations for MuseScore 4.  
+Minor design changes.  
 Typos fixed.
 
 1.2  
