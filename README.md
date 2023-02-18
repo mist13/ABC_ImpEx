@@ -1,7 +1,7 @@
 # ABC_ImpEx
 
-This plugin will run in MuseScore 3.5 and newer.
-It is one of the plugins that are waiting for the rewrite of the MuseScore plugin API to work in version 4.
+This plugin will run in MuseScore 3.5 and newer.  
+It is one of the plugins that are waiting for the rewrite of the MuseScore plugin API to work in version 4.  
 Tested on Windows 10 and Linux Mint 20.
 
 It uses abc2xml and xml2abc from [wim.vree.org](https://wim.vree.org/svgParse) to import and export tunes from and to abc notation via MusicXML.  
