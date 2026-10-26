@@ -14,12 +14,17 @@ If you use it with Python, Python has to be in the PATH environment variable.
 ## Translations
 This plugin speaks English, French, German and Irish.  
 Thanks to Batt O'Connor for his help with the Irish.  
-Thanks to Benoît Rouits for the French translation.If you can provide translations into other languages, please be in touch.
+Thanks to Benoît Rouits for the French translation.
+Thanks to Maurizio Aru for the Italian translation.
+If you can provide translations into other languages, please be in touch.
 
 ## Further Information
 For more detailed info visit [blechtrottel.net](http://blechtrottel.net/en/abc_impex.html)
 
 ## Version History
+1.4  
+Ialian translation added.
+
 1.3  
 Adaptations for MuseScore 4.  
 Minor design changes.  
