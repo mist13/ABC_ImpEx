@@ -31,7 +31,7 @@ import Qt.labs.folderlistmodel 2.2
 
 MuseScore {
     menuPath: "Plugins.ABC ImpEx"
-    version: "1.3"
+    version: "1.4"
     description: qsTr("This plugin imports ABC notation from a file or the clipboard and exports the current score to ABC.\nExecutables of abc2xml and/or xml2abc are required.")
     requiresScore: false
     pluginType: "dialog"   
@@ -228,7 +228,7 @@ MuseScore {
     
     Text { // Display plugin version
         id: versionText
-        text: "V 1.3"
+        text: "V 1.4"
         font.pointSize: 10
         color: sysActivePalette.text
         anchors.right: window.right
